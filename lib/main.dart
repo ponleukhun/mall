@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+// import 'package:mall/home_sreen/view.dart';
+import 'package:mall/login/view.dart';
 import 'package:mall/route/app_route.dart';
-import 'package:mall/route/home_sreen/view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: HomeSreenPage(),
-      initialRoute: AppRoute.HOME,
+      home: LoginPage(),
+      initialRoute: AppRoute.LOGIN,
       getPages: AppRoute.pages,
     );
   }
