@@ -46,6 +46,29 @@ class LoginPage extends StatelessWidget {
                   ),
                   Image.network(
                     'https://www.chipmong.com/wp-content/uploads/2020/01/timeline5a.png',
+                    loadingBuilder: (BuildContext context, Widget child,
+                        ImageChunkEvent? loadingProgress) {
+                      if (loadingProgress == null) {
+                        return child;
+                      }
+                      return Center(
+                        child: CircularProgressIndicator(
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded /
+                                  (loadingProgress.expectedTotalBytes ?? 1)
+                              : null,
+                        ),
+                      );
+                    },
+                    errorBuilder: (BuildContext context, Object error,
+                        StackTrace? stackTrace) {
+                      return Center(
+                        child: Text(
+                          'Image failed to load',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      );
+                    },
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
