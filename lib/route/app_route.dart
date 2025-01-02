@@ -7,12 +7,18 @@ import 'package:mall/mall_detail/binding.dart';
 import 'package:mall/mall_detail/view.dart';
 import 'package:mall/mall_list/binding.dart';
 import 'package:mall/mall_list/view.dart';
+import 'package:mall/shop_detail/binding.dart';
+import 'package:mall/shop_detail/view.dart';
+import 'package:mall/shop_list/binding.dart';
+import 'package:mall/shop_list/view.dart';
 
 class AppRoute {
   static const HOME = "/home_screen";
   static const LOGIN = "/login";
   static const MALL = "/mall_list";
   static const MALLDETAIL = "/mall_detail";
+  static const SHOPDETAIL = "/shop_detail";
+  static const SHOPLIST = "/shop_list";
   static final pages = [
     GetPage(
       name: HOME,
@@ -25,5 +31,11 @@ class AppRoute {
         name: MALLDETAIL,
         page: () => MallDetailPage(),
         binding: MallDetailBinding()),
+    GetPage(
+        name: SHOPLIST, page: () => ShopListPage(), binding: ShopListBinding()),
+    GetPage(
+        name: SHOPDETAIL,
+        page: () => ShopDetailPage(),
+        binding: ShopDetailBinding()),
   ];
 }

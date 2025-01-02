@@ -177,31 +177,33 @@ class LoginPage extends StatelessWidget {
                         fontSize: 13),
                   ),
                   Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            "លក្ខខណ្ឌនៃការប្រើប្រាស់",
-                            style: TextStyle(
-                                color: Colors.pink,
-                                fontWeight: FontWeight.w100,
-                                fontSize: 13),
-                          )),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Text(
+                          "លក្ខខណ្ឌនៃការប្រើប្រាស់",
+                          style: TextStyle(
+                              color: Colors.pink,
+                              fontWeight: FontWeight.w100,
+                              fontSize: 13),
+                        ),
+                      ),
                       Text(
-                        "និង",
+                        " និង ",
                         style: TextStyle(
                             fontWeight: FontWeight.w100, fontSize: 13),
                       ),
-                      TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            "គោលការណ៍ឯកជន",
-                            style: TextStyle(
-                                color: Colors.pink,
-                                fontWeight: FontWeight.w100,
-                                fontSize: 13),
-                          )),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Text(
+                          "គោលការណ៍ឯកជន",
+                          style: TextStyle(
+                              color: Colors.pink,
+                              fontWeight: FontWeight.w100,
+                              fontSize: 13),
+                        ),
+                      )
                     ],
                   ),
                 ],

@@ -35,17 +35,22 @@ class HomeSreenPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     CircleAvatar(
-                      radius: 60,
-                      backgroundImage: NetworkImage(
-                        "https://th.bing.com/th/id/OIP.fVzHHTFBNbxiuPLgdK-1MgHaLH?rs=1&pid=ImgDetMain",
+                      radius: 58,
+                      child: CircleAvatar(
+                        radius: 55,
+                        backgroundImage: NetworkImage(
+                          "https://th.bing.com/th/id/OIP.fVzHHTFBNbxiuPLgdK-1MgHaLH?rs=1&pid=ImgDetMain",
+                        ),
                       ),
                     ),
                     Text(
                       "សួស្ដី,\n" + "Scorpita",
                       style: TextStyle(
+                          decoration: TextDecoration.none,
                           fontSize: 16,
                           color: Colors.white,
-                          fontWeight: FontWeight.w100),
+                          fontWeight: FontWeight.w300,
+                          fontFamily: "TimeNewRoman"),
                     ),
                   ],
                 ),
@@ -68,6 +73,7 @@ class HomeSreenPage extends StatelessWidget {
                 Container(
                   height: 136.5,
                   width: 300,
+                  padding: EdgeInsets.only(top: 25),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
@@ -80,20 +86,53 @@ class HomeSreenPage extends StatelessWidget {
                           blurRadius: 1,
                         )
                       ]),
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          bottomLeft: Radius.circular(20)),
-                      child: Image.asset(
-                        'assets/images/Chip_Mong_Mall.png',
-                      )),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(right: 15),
+                        child: Column(
+                          children: [
+                            Text(
+                              "Chip Mong Mall List",
+                              style: TextStyle(
+                                decoration: TextDecoration.none,
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "TimeNewRoman",
+                              ),
+                            ),
+                            Text(
+                              "shopping global brand",
+                              style: TextStyle(
+                                  decoration: TextDecoration.none,
+                                  fontSize: 8,
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.w200),
+                            ),
+                          ],
+                        ),
+                      ),
+                      ClipRRect(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              bottomLeft: Radius.circular(20)),
+                          child: Image.asset(
+                            'assets/images/Chip_Mong_Mall_list.png',
+                          )),
+                    ],
+                  ),
                 ),
               ],
             ),
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(AppRoute.SHOPLIST);
+            },
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
                   height: 136.5,
@@ -110,13 +149,48 @@ class HomeSreenPage extends StatelessWidget {
                           blurRadius: 1,
                         )
                       ]),
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(20),
-                          bottomRight: Radius.circular(20)),
-                      child: Image.asset(
-                        'assets/images/Chip_Mong_Supermarket.png',
-                      )),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 15),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Chip Mong Shop List",
+                                style: TextStyle(
+                                    decoration: TextDecoration.none,
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: "TimeNewRoman"),
+                              ),
+                              Text(
+                                "Explore our marketplace",
+                                style: TextStyle(
+                                    decoration: TextDecoration.none,
+                                    fontSize: 8,
+                                    color: Colors.black54,
+                                    fontWeight: FontWeight.w200),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(20),
+                                bottomRight: Radius.circular(20)),
+                            child: Image.asset(
+                              'assets/images/Chip_Mong_Shop_list.png',
+                            )),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
