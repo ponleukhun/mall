@@ -15,7 +15,10 @@ class ShopDetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text("Shop Detail"),
+        title: Text(
+          "Shop Detail",
+          style: TextStyle(fontWeight: FontWeight.w600),
+        ),
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.favorite_border))
         ],

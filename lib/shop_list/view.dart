@@ -16,7 +16,10 @@ class ShopListPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Shop List"),
+        title: Text(
+          "Shop List",
+          style: TextStyle(fontWeight: FontWeight.w600),
+        ),
         backgroundColor: Colors.white,
         actions: [
           IconButton(

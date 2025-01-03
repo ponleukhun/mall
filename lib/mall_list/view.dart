@@ -15,10 +15,20 @@ class MallListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text("Mall List"),
-        backgroundColor: Colors.white,
-      ),
+      appBar: PreferredSize(
+          preferredSize: Size(double.infinity, 60),
+          child: Container(
+            decoration: BoxDecoration(color: Colors.white, boxShadow: [
+              BoxShadow(color: Colors.grey, offset: Offset(0, 1), blurRadius: 1)
+            ]),
+            child: AppBar(
+              title: Text(
+                "Mall List",
+                style: TextStyle(fontWeight: FontWeight.w600),
+              ),
+              backgroundColor: Colors.white,
+            ),
+          )),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -43,35 +53,49 @@ class MallListPage extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: Container(
-                      height: 80,
-                      width: double.infinity,
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
                           boxShadow: [
                             BoxShadow(
-                                color: Colors.black12,
+                                color: Colors.grey,
                                 offset: Offset(0, 1),
                                 blurRadius: 1)
                           ]),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Icon(
-                            Icons.location_on,
-                            color: Colors.pink,
-                          ),
-                          Column(
-                            children: [
-                              Text("Chip Mong 271 Mega Mall"),
-                              Text(
-                                "HVRF+8W9, Oknha Mong Reththy St. (1928), Phnom Penh",
-                                style:
-                                    TextStyle(color: Colors.grey, fontSize: 10),
+                      child: ListTile(
+                        onTap: () {
+                          Get.toNamed(AppRoute.MALLDETAIL);
+                        },
+                        leading: Icon(
+                          Icons.location_on,
+                          color: Colors.pink.shade400,
+                        ),
+                        title: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Chip Mong 271 Mega Mall",
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.w600),
+                            ),
+                            Text(
+                              "HVRF+8W9, Oknha Mong Reththy St. (1928), Phnom Penh",
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 12,
                               ),
-                            ],
-                          ),
-                        ],
+                            ),
+                          ],
+                        ),
+                        trailing: Icon(
+                          Icons.navigate_next,
+                          size: 25,
+                          color: Colors.black54,
+                        ),
                       ),
                     ),
                   );
