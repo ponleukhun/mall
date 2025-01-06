@@ -36,7 +36,9 @@ class LoginPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed(AppRoute.REGISTER);
+                        },
                         child: Text(
                           "Register",
                           style: TextStyle(fontSize: 15, color: Colors.pink),
@@ -44,32 +46,37 @@ class LoginPage extends StatelessWidget {
                       )
                     ],
                   ),
-                  Image.network(
-                    'https://www.chipmong.com/wp-content/uploads/2020/01/timeline5a.png',
-                    loadingBuilder: (BuildContext context, Widget child,
-                        ImageChunkEvent? loadingProgress) {
-                      if (loadingProgress == null) {
-                        return child;
-                      }
-                      return Center(
-                        child: CircularProgressIndicator(
-                          value: loadingProgress.expectedTotalBytes != null
-                              ? loadingProgress.cumulativeBytesLoaded /
-                                  (loadingProgress.expectedTotalBytes ?? 1)
-                              : null,
-                        ),
-                      );
-                    },
-                    errorBuilder: (BuildContext context, Object error,
-                        StackTrace? stackTrace) {
-                      return Center(
-                        child: Text(
-                          'Image failed to load',
-                          style: TextStyle(color: Colors.red),
-                        ),
-                      );
-                    },
+                  //chipmong retail Logo
+                  Container(
+                    height: 150,
+                    child: Image.network(
+                      'https://www.chipmong.com/wp-content/uploads/2020/01/timeline5a.png',
+                      loadingBuilder: (BuildContext context, Widget child,
+                          ImageChunkEvent? loadingProgress) {
+                        if (loadingProgress == null) {
+                          return child;
+                        }
+                        return Center(
+                          child: CircularProgressIndicator(
+                            value: loadingProgress.expectedTotalBytes != null
+                                ? loadingProgress.cumulativeBytesLoaded /
+                                    (loadingProgress.expectedTotalBytes ?? 1)
+                                : null,
+                          ),
+                        );
+                      },
+                      errorBuilder: (BuildContext context, Object error,
+                          StackTrace? stackTrace) {
+                        return Center(
+                          child: Text(
+                            'Image failed to load',
+                            style: TextStyle(color: Colors.red),
+                          ),
+                        );
+                      },
+                    ),
                   ),
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -79,6 +86,7 @@ class LoginPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  //Number phone TextFeild
                   Container(
                     decoration: BoxDecoration(
                         color: Colors.white,
@@ -122,6 +130,7 @@ class LoginPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  //password Textfeild
                   Container(
                     decoration: BoxDecoration(
                         color: Colors.white,
@@ -150,17 +159,6 @@ class LoginPage extends StatelessWidget {
                         ),
                         hintStyle: TextStyle(
                             color: Colors.grey, fontWeight: FontWeight.w100),
-                        // suffixIcon: Obx(() {
-                        //   return IconButton(
-                        //       icon: Icon(
-                        //         _isObscure
-                        //             ? Icons.visibility
-                        //             : Icons.visibility_off,
-                        //       ),
-                        //       onPressed: () {
-                        //         _isObscure = !_isObscure;
-                        //       });
-                        // }),
                       ),
                       onChanged: (value) {},
                     ),
@@ -176,6 +174,7 @@ class LoginPage extends StatelessWidget {
                         fontWeight: FontWeight.w100,
                         fontSize: 13),
                   ),
+                  //លក្ខខណ្ឌនៃការប្រើប្រាស់ text button
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -194,6 +193,7 @@ class LoginPage extends StatelessWidget {
                         style: TextStyle(
                             fontWeight: FontWeight.w100, fontSize: 13),
                       ),
+                      //គោលការណ៍ឯកជន text button
                       GestureDetector(
                         onTap: () {},
                         child: Text(
@@ -208,6 +208,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ],
               ),
+              //visit as a guest text button
               Column(
                 // mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -223,7 +224,9 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  //Login Button
                   GestureDetector(
+                    //go to Home page by tap on container
                     onTap: () {
                       Get.toNamed(AppRoute.HOME);
                     },

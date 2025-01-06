@@ -44,14 +44,18 @@ class MallListPage extends StatelessWidget {
               "Explore our mall location for easy travel.",
               style: TextStyle(fontSize: 11, color: Colors.black54),
             ),
+            SizedBox(
+              height: 10,
+            ),
             Expanded(
               child: ListView.builder(
                 physics: BouncingScrollPhysics(),
+                shrinkWrap: true,
                 scrollDirection: Axis.vertical,
                 itemCount: 3,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(bottom: 10),
                     child: Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -71,6 +75,7 @@ class MallListPage extends StatelessWidget {
                         leading: Icon(
                           Icons.location_on,
                           color: Colors.pink.shade400,
+                          size: 27,
                         ),
                         title: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

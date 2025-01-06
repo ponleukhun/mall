@@ -13,7 +13,7 @@ class MallDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
         title: Text(
           "Mall Detail",
@@ -26,6 +26,7 @@ class MallDetailPage extends StatelessWidget {
           Container(
             height: 350,
             width: double.infinity,
+            color: Colors.white,
             child: Column(
               children: [
                 Image(
@@ -61,7 +62,9 @@ class MallDetailPage extends StatelessWidget {
                               child: Text(
                                 "HVRF+8W9, Oknha Mong Reththy St. (1928), Phnom Penh",
                                 style: TextStyle(
-                                    fontSize: 14, color: Colors.black54),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black54),
                               ),
                             ),
                           ],
@@ -92,7 +95,9 @@ class MallDetailPage extends StatelessWidget {
                               child: Text(
                                 "9:00 AM – 10:00PM",
                                 style: TextStyle(
-                                    fontSize: 14, color: Colors.black54),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14,
+                                    color: Colors.black54),
                               ),
                             )
                           ],
@@ -110,7 +115,9 @@ class MallDetailPage extends StatelessWidget {
                               child: Text(
                                 "(+855) 69 999 279",
                                 style: TextStyle(
-                                    fontSize: 14, color: Colors.black54),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14,
+                                    color: Colors.black54),
                               ),
                             )
                           ],
@@ -126,24 +133,64 @@ class MallDetailPage extends StatelessWidget {
             height: 10,
           ),
           Expanded(
-              child: Padding(
+              child: Container(
+            color: Colors.white,
             padding: EdgeInsets.all(10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Follow as:"),
+                Text(
+                  "Follow us:",
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
+                  //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    //facebook logo
                     CircleAvatar(
                       radius: 20,
                       backgroundImage: NetworkImage(
                           "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png"),
                     ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    //tiktok logo
                     CircleAvatar(
                       radius: 20,
                       backgroundImage: NetworkImage(
                           "https://static.vecteezy.com/system/resources/previews/016/716/450/original/tiktok-icon-free-png.png"),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    //youtube logo
+                    CircleAvatar(
+                      radius: 20,
+                      backgroundImage: NetworkImage(
+                          "https://www.pinclipart.com/picdir/big/72-729738_youtube-red-circle-circle-youtube-logo-png-clipart.png"),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    //instagram logo
+                    CircleAvatar(
+                      radius: 20,
+                      backgroundImage: NetworkImage(
+                          "https://www.prescottgolfclub.com/wp-content/uploads/sites/8834/2023/05/instagram-logo.png?resize=1536"),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    //twitter logo
+                    CircleAvatar(
+                      radius: 20,
+                      backgroundImage: NetworkImage(
+                          "https://cdn.punchng.com/wp-content/uploads/2023/07/24084806/Twitter-new-logo.jpeg"),
                     ),
                   ],
                 ),

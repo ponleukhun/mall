@@ -34,6 +34,7 @@ class HomeSreenPage extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
+                    //user profile
                     CircleAvatar(
                       radius: 58,
                       child: CircleAvatar(
@@ -44,7 +45,7 @@ class HomeSreenPage extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "សួស្ដី,\n" + "Scorpita",
+                      "សួស្ដី,\n" + "Scorpita", // Username
                       style: TextStyle(
                           decoration: TextDecoration.none,
                           fontSize: 16,
@@ -86,6 +87,7 @@ class HomeSreenPage extends StatelessWidget {
                           blurRadius: 1,
                         )
                       ]),
+                  //Mall list button
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -155,6 +157,7 @@ class HomeSreenPage extends StatelessWidget {
                         flex: 1,
                         child: Padding(
                           padding: const EdgeInsets.only(left: 15),
+                          //Shop List button
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
