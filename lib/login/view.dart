@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:khmer_fonts/khmer_fonts.dart';
+import 'package:mall/model/user_response/user_response.dart';
 import 'package:mall/route/app_route.dart';
-
+import 'package:dio/dio.dart';
 import 'logic.dart';
 import 'state.dart';
 
@@ -98,7 +99,7 @@ class LoginPage extends StatelessWidget {
                               blurRadius: 1)
                         ]),
                     child: TextField(
-                      controller: null,
+                      controller: state.taskControllerUser,
                       style: TextStyle(height: 0.7),
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -143,7 +144,7 @@ class LoginPage extends StatelessWidget {
                         ]),
                     child: TextField(
                       obscureText: _isObscure,
-                      controller: null,
+                      controller: state.taskControllerPassword,
                       style: TextStyle(height: 0.7),
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -228,7 +229,7 @@ class LoginPage extends StatelessWidget {
                   GestureDetector(
                     //go to Home page by tap on container
                     onTap: () {
-                      Get.toNamed(AppRoute.HOME);
+                      logic.fetchLogIn();
                     },
                     child: Container(
                       height: 50,
