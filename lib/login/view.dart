@@ -82,7 +82,7 @@ class LoginPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        "លេខទូរសព្ទ",
+                        "ឈ្មោះអ្នកប្រើប្រាស់",
                         style: TextStyle(fontWeight: FontWeight.w100),
                       ),
                     ],
@@ -112,7 +112,7 @@ class LoginPage extends StatelessWidget {
                           borderSide:
                               const BorderSide(color: Colors.grey, width: 1),
                         ),
-                        hintText: "សូមបញ្ចូលលេខទូរសព្ទ",
+                        hintText: "សូមបញ្ចូលឈ្មោះអ្នកប្រើប្រាស់",
                         hintStyle: TextStyle(
                             color: Colors.grey, fontWeight: FontWeight.w100),
                       ),

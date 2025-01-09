@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:mall/data/user_cache.dart';
 
 // import 'package:mall/home_sreen/view.dart';
 import 'package:mall/login/view.dart';
+import 'package:mall/model/user_response/user_response.dart';
 import 'package:mall/route/app_route.dart';
 
-void main() {
+Future<void> main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(UserResponseImplAdapter());
+  await Hive.openBox('userBox');
+  Get.put(UserCache());
   runApp(const MyApp());
 }
 

@@ -20,8 +20,14 @@ UserResponse _$UserResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserResponse {
+  @HiveField(0)
   String? get token => throw _privateConstructorUsedError;
+  @HiveField(0)
+  set token(String? value) => throw _privateConstructorUsedError;
+  @HiveField(1)
   String? get message => throw _privateConstructorUsedError;
+  @HiveField(1)
+  set message(String? value) => throw _privateConstructorUsedError;
 
   /// Serializes this UserResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,7 +45,7 @@ abstract class $UserResponseCopyWith<$Res> {
           UserResponse value, $Res Function(UserResponse) then) =
       _$UserResponseCopyWithImpl<$Res, UserResponse>;
   @useResult
-  $Res call({String? token, String? message});
+  $Res call({@HiveField(0) String? token, @HiveField(1) String? message});
 }
 
 /// @nodoc
@@ -81,7 +87,7 @@ abstract class _$$UserResponseImplCopyWith<$Res>
       __$$UserResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? token, String? message});
+  $Res call({@HiveField(0) String? token, @HiveField(1) String? message});
 }
 
 /// @nodoc
@@ -116,34 +122,24 @@ class __$$UserResponseImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.none)
+@HiveType(typeId: 0)
 class _$UserResponseImpl implements _UserResponse {
-  _$UserResponseImpl({this.token, this.message});
+  _$UserResponseImpl({@HiveField(0) this.token, @HiveField(1) this.message});
 
   factory _$UserResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserResponseImplFromJson(json);
 
   @override
-  final String? token;
+  @HiveField(0)
+  String? token;
   @override
-  final String? message;
+  @HiveField(1)
+  String? message;
 
   @override
   String toString() {
     return 'UserResponse(token: $token, message: $message)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$UserResponseImpl &&
-            (identical(other.token, token) || other.token == token) &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, token, message);
 
   /// Create a copy of UserResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -162,16 +158,23 @@ class _$UserResponseImpl implements _UserResponse {
 }
 
 abstract class _UserResponse implements UserResponse {
-  factory _UserResponse({final String? token, final String? message}) =
-      _$UserResponseImpl;
+  factory _UserResponse(
+      {@HiveField(0) String? token,
+      @HiveField(1) String? message}) = _$UserResponseImpl;
 
   factory _UserResponse.fromJson(Map<String, dynamic> json) =
       _$UserResponseImpl.fromJson;
 
   @override
+  @HiveField(0)
   String? get token;
+  @HiveField(0)
+  set token(String? value);
   @override
+  @HiveField(1)
   String? get message;
+  @HiveField(1)
+  set message(String? value);
 
   /// Create a copy of UserResponse
   /// with the given fields replaced by the non-null parameter values.
